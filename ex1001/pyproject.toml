@@ -1,5 +1,5 @@
 [project]
-name = "10-1"
+name = "ex1001"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
@@ -9,10 +9,13 @@ authors = [
 requires-python = ">=3.12"
 dependencies = [
     "dotenv>=0.9.9",
+    "langchain-openai>=1.6.7",
+    "langgraph>=1.2.12",
+    "python-dotenv>=1.2.3",
 ]
 
 [project.scripts]
-10-1 = "10_1:main"
+ex1001 = "ex1001:main"
 
 [build-system]
 requires = ["uv_build>=0.12.20,<0.13.0"]
