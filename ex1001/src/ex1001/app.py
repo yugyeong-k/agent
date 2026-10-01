@@ -1,7 +1,7 @@
 # from .page86 import page86_ai_msg
 from langchain_core.messages import AIMessage, HumanMessage
 from langgraph.graph.message import add_messages
-from .chapter5 import add, chatbot, graph
+from .chapter5_2 import add, chatbot, graph
 from .data import users_td, make_users_pd
 
 def main() -> None:
@@ -29,7 +29,8 @@ def main() -> None:
     # print(result)
     
     # 그래프 실행 (조건부 엣지)
-    app = graph.compile()
-    result = app.invoke({"messages": ["1234567891011"]})
+    def run_5_2():
+        app = graph.compile()
+        result = app.invoke({"messages": ["1234567891011"]})
+        print(result)
     
-    print(result)

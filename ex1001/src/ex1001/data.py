@@ -1,4 +1,4 @@
-from .chapter5 import UserTD, UserPD   
+from .chapter5_2 import UserTD, UserPD   
 
 # TypeDict  
 users_td: list[UserTD] = [
