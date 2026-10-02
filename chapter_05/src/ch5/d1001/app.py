@@ -1,4 +1,3 @@
-# from .page86 import page86_ai_msg
 from langchain_core.messages import AIMessage, HumanMessage
 from langgraph.graph.message import add_messages
 from .chapter5_2 import add, chatbot, graph
@@ -31,7 +30,7 @@ def main() -> None:
     # 그래프 실행 (조건부 엣지)
     def run_5_2():
         app = graph.compile()
-        result = app.invoke({"messages": ["1234567891011"]})
+        result = app.invoke({"messages": ["12345678910" * 200]})
         print(result)
     
     run_5_2()
