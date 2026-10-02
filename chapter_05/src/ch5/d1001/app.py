@@ -28,9 +28,6 @@ def main() -> None:
     # print(result)
     
     # 그래프 실행 (조건부 엣지)
-    def run_5_2():
-        app = graph.compile()
-        result = app.invoke({"messages": ["12345678910" * 200]})
-        print(result)
-    
-    run_5_2()
+    app = graph.compile()
+    result = app.invoke({"messages": ["12345678910" * 200]})
+    print(result)
