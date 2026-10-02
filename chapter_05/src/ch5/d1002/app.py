@@ -12,6 +12,6 @@ def main() -> None:
     print(result2)
 
     # # 출력된 mermaid 텍스트를 https://mermaid.live 에 붙여 넣으면 그림으로 볼 수 있음
-    # print(graph.get_graph().draw_mermaid())
+    print(graph.get_graph().draw_mermaid())
 
     

@@ -1,3 +1,3 @@
-from .d1002 import main
+from .d1002.app import main
 
 __all__ = ["main"]
