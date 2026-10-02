@@ -34,3 +34,4 @@ def main() -> None:
         result = app.invoke({"messages": ["1234567891011"]})
         print(result)
     
+    run_5_2()
