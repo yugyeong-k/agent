@@ -8,10 +8,13 @@ authors = [
 ]
 requires-python = ">=3.12"
 dependencies = [
+    "colorama>=0.4.6",
     "dotenv>=0.9.9",
     "langchain-openai>=1.6.7",
     "langchain-tavily>=0.2.18",
     "langgraph>=1.2.12",
+    "langgraph-cli[inmem]>=0.4.32",
+    "numpy>=2.5.3",
     "python-dotenv>=1.2.4",
 ]
 

@@ -5,8 +5,6 @@ load_dotenv()
 from langchain_tavily import TavilySearch
 from langchain.tools import tool
 from langchain_openai import ChatOpenAI
-from typing import TypedDict, Annotated
-from langgraph.graph.message import add_messages
 
 # Tavily로 웹 검색 [page 121]
 def search_web(query: str) -> dict:
@@ -43,18 +41,12 @@ def get_llm_with_tools():
 
 # 웹 검색 도구를 사용하는 LLM 생성 [page 127]
 def get_llm_with_tavily():
-    search= TavilySearch(max_results=2)
-    tavily_tools= [search]
+    search = TavilySearch(max_results=2)
+    tavily_tools = [search]
     
-    llm = ChatOpenAI(model="gpt-4o-mini")
-    return llm.bind_tools(tavily_tools)
+    llm = ChatOpenAI(model="gpt-4o-mini") 
+    return llm.bind_tools(tavily_tools) # LLM에게 도구 설명서 전달
 
-# 메세지 목록을 관리하는 그래프 상태 정의 및 생성 [page 130] 
-class State(TypedDict):
-    messages: Annotated[list, add_messages]
-    
-############################################################ 130쪽 부터 이어서 하기~~
-        
 def main() -> None:
     # Tavily search 실행 [page 121]
     # result = search_web("랭그래프가 무엇인가요?")
@@ -72,10 +64,9 @@ def main() -> None:
     # 웹 검색 도구 사용 [page 129]
     llm_with_tavily = get_llm_with_tavily()
     response3 = llm_with_tavily.invoke("안녕") # 도구 사용 필요 없는 질문
-    response4 = llm_with_tavily.invoke("2026년 AI 트렌드는 무엇인가요?") # 최신 정보가 필요한 질문 -> tavily_search 호출 요청
+    response4 = llm_with_tavily.invoke("2026년 AI 트렌드는 무엇인가요?") # 최신 정보가 필요한 질문 요청 -> tavily_search 도구 호출 요청
     
     print(response3,"\n")
     print(response4,"\n")
     print(response3.tool_calls,"\n")
     print(response4.tool_calls)
-    

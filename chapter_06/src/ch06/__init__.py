@@ -1,3 +1,3 @@
-from .web_agent.tavilysearch_tool import main
+from .coding_agent.agent import main
 
 __all__ = ["main"]
